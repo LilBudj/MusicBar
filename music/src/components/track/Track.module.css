@@ -1,0 +1,12 @@
+.container{
+    width: 80vw;
+    height: 50px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+    font-size: 14px;
+    font-family: sans-serif;
+}
+
+.element{
+    text-align: left;
+}
