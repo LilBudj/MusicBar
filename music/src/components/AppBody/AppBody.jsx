@@ -1,9 +1,11 @@
 import React from "react";
 import TrackContainer from "../track/TrackContainer";
 import style from './AppBody.module.css'
+import {Select} from 'antd'
+import Selector from "../Selector";
 
 const AppBody = (props) => {
-debugger
+
     const tracks = props.tracks.map( (t) => <TrackContainer song={t.song} singer={t.singer} genre={t.genre} year={t.year}/>);
 
     return(
@@ -13,7 +15,12 @@ debugger
                 {tracks}
             </div>
             <div className={style.selectors}>
-                uuu
+                <Selector placeholder={"Select a singer"}
+                          opt1={"Slipknot"} opt2={"Linkin Park"} opt3={"Scorpions"} opt4={"Limp Bizkit"}/>
+                <Selector placeholder={"Select a genre"}
+                          opt1={"Slipknot"} opt2={"Linkin Park"} opt3={"Scorpions"} opt4={"Limp Bizkit"}/>
+                <Selector placeholder={"Select a year"}
+                          opt1={"Slipknot"} opt2={"Linkin Park"} opt3={"Scorpions"} opt4={"Limp Bizkit"}/>
             </div>
         </div>
     )

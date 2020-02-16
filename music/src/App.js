@@ -1,6 +1,7 @@
 import React from 'react';
 import * as axios from 'axios'
 import AppBody from './components/AppBody/AppBody'
+import 'antd/dist/antd.css'
 
 class AppContainer extends React.Component {
 
