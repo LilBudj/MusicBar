@@ -4,24 +4,19 @@ import AppBody from './components/AppBody/AppBody'
 
 class AppContainer extends React.Component {
 
+    state = {
+        initTracks: []
+    };
+
     componentDidMount() {
-        axios.get('https://localhost:8000/tracks').then(res => {
-            const tracks = res.data.tracks;
-            this.setState({initTracks: tracks})
+        axios.get('http://localhost:3010/tracks').then(res => {
+            const initTracks = res.data.initTracks.tracks;
+            this.setState({initTracks})
         })
     }
 
-    state = {
-        initTracks: [
-            {singer: 'slipknot', song: 'ffff', genre: 'metal', year: '2000'},
-            {singer: 'slipknot', song: 'ffff', genre: 'metal', year: '2000'},
-            {singer: 'slipknot', song: 'ffff', genre: 'metal', year: '2000'},
-            {singer: 'slipknot', song: 'ffff', genre: 'metal', year: '2000'},
-        ]
-
-    };
-
     render = () => {
+        debugger
         return (
             <div className="App">
                 <header className="App-header">

@@ -7,15 +7,12 @@ const app = express();
 app.use(cors());
 
 app.get('/tracks', (req, res) => {
-    res.send(JSON.stringify({tracks: initTracks}));
-});
-app.get('', async (req, res) => {
-    res.send(JSON.stringify({tracks: initTracks}))
+    res.send(JSON.stringify(initTracks));
 });
 app.use(function (req, res) {
     res.sendStatus(404)
 });
 
-app.listen(8000, function () {
-    console.log("App is listening on port 3000")
+app.listen(3010, function () {
+    console.log("App is listening on port 3010")
 });

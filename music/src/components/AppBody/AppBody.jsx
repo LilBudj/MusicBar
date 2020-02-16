@@ -3,8 +3,8 @@ import TrackContainer from "../track/TrackContainer";
 import style from './AppBody.module.css'
 
 const AppBody = (props) => {
-
-    const tracks = props.tracks.map( t => <TrackContainer song={t.song} singer={t.singer} genre={t.genre} year={t.year}/>);
+debugger
+    const tracks = props.tracks.map( (t) => <TrackContainer song={t.song} singer={t.singer} genre={t.genre} year={t.year}/>);
 
     return(
         <div className={style.container}>
