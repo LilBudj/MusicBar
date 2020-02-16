@@ -17,7 +17,6 @@ class AppContainer extends React.Component {
     }
 
     render = () => {
-        debugger
         return (
             <div className="App">
                 <header className="App-header">

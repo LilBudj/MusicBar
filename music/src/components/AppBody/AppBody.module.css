@@ -10,6 +10,12 @@
     flex-direction: column;
 }
 
+.pagination{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
 .selectors{
     width: 20vw;
     height: 100%;
