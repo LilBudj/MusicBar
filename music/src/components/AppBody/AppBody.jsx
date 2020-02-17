@@ -8,7 +8,7 @@ const AppBody = (props) => {
     const [genre, setGenre] = useState(null);
     const [year, setYear] = useState(null);
 
-    let [currentCounter, setCurrentCounter] = useState(5);
+    const [currentCounter, setCurrentCounter] = useState(5);
     const [currentPage, setCurrentPage] = useState(1);
 
     const tracks = props.tracks.filter( t => {
@@ -20,14 +20,14 @@ const AppBody = (props) => {
             }
             else return false
 
-    }).map( (t) => <TrackContainer song={t.song} singer={t.singer} genre={t.genre} year={t.year}/>);
+    }).map( (t) => <TrackContainer song={t.song} singer={t.singer} genre={t.genre} year={t.year} key={t.id}/>);
 
     const pagesCount = [];
     for (let i = 1; i < Math.ceil(tracks.length/currentCounter) + 1; i++){
         pagesCount.push(i)
     }
     const pages = pagesCount.map( i => <span
-        onClick={() => {setCurrentPage(i)}} className={(currentPage === i) ? style.active : style.count}>
+        onClick={() => {setCurrentPage(i)}} className={(currentPage === i) ? style.active : style.count} key={i}>
         {i} </span>);
 
     let pagePortioned = tracks.slice((currentPage-1)*currentCounter, (currentPage-1)*currentCounter + currentCounter);
