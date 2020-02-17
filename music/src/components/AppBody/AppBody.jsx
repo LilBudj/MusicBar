@@ -4,10 +4,12 @@ import style from './AppBody.module.css'
 import Selector from "../Selector";
 
 const AppBody = (props) => {
-    let [singer, setSinger] = useState(null);
-    let [genre, setGenre] = useState(null);
-    let [year, setYear] = useState(null);
+    const [singer, setSinger] = useState(null);
+    const [genre, setGenre] = useState(null);
+    const [year, setYear] = useState(null);
 
+    let [currentCounter, setCurrentCounter] = useState(5);
+    const [currentPage, setCurrentPage] = useState(1);
 
     const tracks = props.tracks.filter( t => {
             if (t.singer === singer || singer === null){
@@ -20,17 +22,31 @@ const AppBody = (props) => {
 
     }).map( (t) => <TrackContainer song={t.song} singer={t.singer} genre={t.genre} year={t.year}/>);
 
+    const pagesCount = [];
+    for (let i = 1; i < Math.ceil(tracks.length/currentCounter) + 1; i++){
+        pagesCount.push(i)
+    }
+    const pages = pagesCount.map( i => <span
+        onClick={() => {setCurrentPage(i)}} className={(currentPage === i) ? style.active : style.count}>
+        {i} </span>);
+
+    let pagePortioned = tracks.slice((currentPage-1)*currentCounter, (currentPage-1)*currentCounter + currentCounter);
+
     return(
         <div className={style.container}>
             <div className={style.tracks}>
             <TrackContainer song={"song"} singer={"singer"} genre={"genre"} year={"year"}/>
-                {tracks}
+                {pagePortioned}
                 <div className={style.pagination}>
                     <div className={style.counter}>
-
+                        <span onClick={() => {setCurrentCounter(5)}} className={(currentCounter === 5) ? style.active : ""}>5 </span>
+                        <span onClick={() => {setCurrentCounter(10)}} className={(currentCounter === 10) ? style.active : ""}>10 </span>
+                        <span onClick={() => {setCurrentCounter(25)}} className={(currentCounter === 25) ? style.active : ""}>25 </span>
+                        <span onClick={() => {setCurrentCounter(50)}} className={(currentCounter === 50) ? style.active : ""}>50 </span>
+                        <span onClick={() => {setCurrentCounter(100)}} className={(currentCounter === 100) ? style.active : ""}>100 </span>
                     </div>
                     <div className={style.pages}>
-
+                        {pages}
                     </div>
                 </div>
             </div>

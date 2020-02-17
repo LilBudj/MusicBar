@@ -25,3 +25,8 @@
     margin-bottom: 100px
 }
 
+.active{
+    color: #2B81AF;
+    font-weight: 700;
+}
+
