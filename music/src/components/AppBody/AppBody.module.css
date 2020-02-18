@@ -31,6 +31,10 @@
     margin-bottom: 100px
 }
 
+.selector{
+    width: 150px
+}
+
 .active{
     color: #2B81AF;
     font-weight: 700;

@@ -52,12 +52,17 @@ const AppBody = (props) => {
                 </div>
             </div>
             <div className={style.selectors}>
+                Singer:
                 <Selector placeholder={"Select a singer"} selectAction={setSinger}
                           opt1={"Slipknot"} opt2={"Linkin Park"} opt3={"Scorpions"} opt4={"Limp Bizkit"}/>
+                          Genre:
                 <Selector placeholder={"Select a genre"} selectAction={setGenre}
-                          opt1={"Heavy Metal"} opt2={"Rock"} opt3={"Punk-Rock"} opt4={"Metal"}/>
+                          opt1={"Heavy Metal"} opt2={"Rock"} opt3={"Punk-Rock"}
+                          opt4={"Metal"} opt5={"Guitar Ballade"} opt6={"Rap-Rock"} opt7={"New Metal"}/>
+                          Year:
                 <Selector placeholder={"Select a year"} selectAction={setYear}
-                          opt1={"2008"} opt2={"2002"} opt3={"1989"} opt4={"1999"}/>
+                          opt1={"1984"} opt2={"1990"} opt3={"1999"} opt4={"2002"}
+                          opt5={"2003"} opt6={"2008"} opt7={"2019"}/>
             </div>
         </div>
     )
