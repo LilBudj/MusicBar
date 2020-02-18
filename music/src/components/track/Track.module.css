@@ -1,12 +1,27 @@
-.container{
+.container1{
     width: 80vw;
     height: 50px;
     display: grid;
     grid-template-columns: 1fr 2fr 1fr 1fr;
     font-size: 14px;
     font-family: sans-serif;
+    border: 2px solid white;
+    margin-top: 10px;
+}
+
+.container2{
+    width: 80vw;
+    height: 50px;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+    font-size: 14px;
+    font-family: sans-serif;
+    border: 2px solid white;
+    background-color: #ccccff;
+    margin-top: 10px;
 }
 
 .element{
     text-align: left;
 }
+

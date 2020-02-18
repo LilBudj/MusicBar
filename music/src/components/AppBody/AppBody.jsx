@@ -20,7 +20,7 @@ const AppBody = (props) => {
             }
             else return false
 
-    }).map( (t) => <TrackContainer song={t.song} singer={t.singer} genre={t.genre} year={t.year} key={t.id}/>);
+    }).map( (t) => <TrackContainer song={t.song} singer={t.singer} genre={t.genre} year={t.year} key={t.id} id={t.id}/>);
 
     const pagesCount = [];
     for (let i = 1; i < Math.ceil(tracks.length/currentCounter) + 1; i++){
@@ -35,7 +35,8 @@ const AppBody = (props) => {
     return(
         <div className={style.container}>
             <div className={style.tracks}>
-            <TrackContainer song={"song"} singer={"singer"} genre={"genre"} year={"year"}/>
+            <TrackContainer song={"song"} singer={"singer"} genre={"genre"} year={"year"} id={0}/>
+            <div className={style.line}/>
                 {pagePortioned}
                 <div className={style.pagination}>
                     <div className={style.counter}>

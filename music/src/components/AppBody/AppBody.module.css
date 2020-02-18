@@ -21,6 +21,12 @@
     height: 100%;
 }
 
+.line{
+    width: 100%;
+    height: 2px;
+    background-color: black;
+}
+
 .selectContainer{
     margin-bottom: 100px
 }
